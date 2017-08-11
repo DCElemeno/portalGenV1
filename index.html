@@ -12,8 +12,9 @@
 	<script src="required/angular.min.js"></script>
 	<script src="required/material.min.js"></script>
 
-	<!-- get ng-app -->
-	<script src="app.js"></script> 	
+	<!-- get ng-app and directives-->
+	<script src="app.js"></script> 
+	<script src="directives/navMenu/navMenuDrtv.js"></script>	
 
 </head>
 <body ng-app="portal" ng-controller="main">
@@ -21,11 +22,15 @@
 	<!-- page container which contains everything-->
 	<div class="page-container">
 
-		<!-- nav container which contains side / top nav bar-->
+		<!-- header content (main and sub) -->
+		<md-card class="main-header">
+			PORTAL AUTOGEN V1.
+		</md-card>
+
+		<!-- nav container which contains side nav bar-->
 		<div class="nav-container">
-
-			<md-card>{{foo}}</md-card>
-
+			<nav-menu nav-options="config.navOptions"></nav-menu>
+			<div class="page-content"></div>
 		</div>
 	</div>	
 </body>
